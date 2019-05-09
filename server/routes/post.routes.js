@@ -17,4 +17,7 @@ router.route('/posts/:cuid').delete(PostController.deletePost);
 // Update a post by cuid
 router.route('/posts/:cuid').put(PostController.editPost);
 
+// Add like
+router.route('/posts/like/:cuid').put(PostController.likePost);
+
 export default router;

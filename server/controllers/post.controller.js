@@ -27,6 +27,15 @@ export function editPost(req, res) {
   });
 }
 
+export function likePost(req, res) {
+  Post.update({ cuid: req.params.cuid }, { likes: req.body.newLikes } ).exec((err, post) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+    res.json({ post });
+  });
+}
+
 /**
  * Save a post
  * @param req
